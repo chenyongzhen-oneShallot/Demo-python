@@ -12,8 +12,8 @@ cur=conn.cursor()
 
 # 使用execute方法执行SQL语句
 #创建user表:
-sql_create="create table mydb.user (id varchar(20) PRIMARY key ,name VARCHAR (20))"
-cur.execute(sql_create)
+#sql_create="create table mydb.user (id varchar(20) PRIMARY key ,name VARCHAR (20))"
+#cur.execute(sql_create)
 
 # 插入一行记录，注意MySQL的占位符是%s:
 sql_insert="insert into mydb.user (id,name) values (2,'小张')"
