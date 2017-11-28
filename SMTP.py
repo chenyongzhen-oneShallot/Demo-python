@@ -13,15 +13,19 @@ receiver="891354032@qq.com"
 message=MIMEText("hello baby","plain","utf-8")
 message["From"]="cyz891354032@163.com"
 message["To"]="891354032@qq.com"
-sub="面试邀请"
-message["Subject"]=Header(sub,"utf-8")
+subject="hello baby"
+message["Subject"]=Header(subject,"utf-8")
 
 
-smtpObj=smtplib.SMTP()
-smtpObj.connect(mail_host,25)
-smtpObj.login(mail_user,mail_password)
-smtpObj.sendmail(sender,receiver,message.as_string())
-smtpObj.quit()
+try:
+    smtpObj=smtplib.SMTP()
+    smtpObj.connect(mail_host,25)
+    smtpObj.login(mail_user,mail_password)
+    smtpObj.sendmail(sender,receiver,message.as_string())
+    smtpObj.quit()
+    print "发送成功"
+except smtplib.SMTPException:
+    print "Error:发送失败"
 
 
 
