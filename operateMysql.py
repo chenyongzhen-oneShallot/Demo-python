@@ -6,7 +6,7 @@ try:
     conn=mysql.connector.connect(host="localhost",port=3306,user="root",password="root",database="mydb")
 
 except mysql.connector.Error as e:
-  print('connect fails!{}'.format(e))
+    print('connect fails!{}'.format(e))
 #使用cursor()方法获取操作游标
 cur=conn.cursor()
 
@@ -16,8 +16,12 @@ cur=conn.cursor()
 #cur.execute(sql_create)
 
 # 插入一行记录，注意MySQL的占位符是%s:
-sql_insert="insert into mydb.user (id,name) values (2,'小张')"
-cur.execute(sql_insert)
+#sql_insert="insert into mydb.user (id,name) values (2,'小张')"
+#cur.execute(sql_insert)
+
+#更新数据库
+sql_update="update mydb.user set name='小红' WHERE id=2"
+cur.execute(sql_update)
 
 #数据库查询
 sql_select="select *from mydb.user"
