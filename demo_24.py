@@ -7,5 +7,5 @@ host=socket.gethostname()
 port=12345
 
 c.connect((host,port))
-print c.recv(1024)
+print (c.recv(1024))
 c.close()
